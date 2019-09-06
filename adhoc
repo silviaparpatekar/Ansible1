@@ -1,0 +1,13 @@
+Adhoc Commands:
+
+
+ansible --version
+touch ansible.cfg
+ansible localhost -m ping -i inventory
+ansible localhost -m copy -a "content='Ansible is awesome' dest=./motd"
+nsible localhost -m copy -a "echo 'Ansible is awesome' dest=./motd"
+ansible localhost -m command -a "echo 'Ansible is awesome' > ./motd"
+ansible-doc -l
+ansible-doc lineinfile
+ansible localhost -m lineinfile -a "regex='Ansible is awesome' line='Ansible is great' path=./motd"
+cat motd
