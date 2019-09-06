@@ -1,0 +1,14 @@
+---
+- name: Install httpd and restart
+  hosts: localhost
+  gather_facts: False
+  become: yes
+  tasks:
+  - name: HTTPD Task
+    yum: 
+        name: httpd
+        state: present
+  - name: restart service
+    service: 
+        name: httpd
+        state: restarted
